@@ -1,0 +1,26 @@
+classdef ComplexNumber  
+    properties  
+        realPart      % Real component  
+        imaginaryPart % Imaginary component  
+    end  
+
+    methods  
+        % Constructor  
+        function obj = ComplexNumber(real, imaginary)  
+            obj.realPart = real;  
+            obj.imaginaryPart = imaginary;  
+        end  
+
+        % Add two complex numbers  
+        function result = add(obj, other)  
+            newReal = obj.realPart + other.realPart;  
+            newImaginary = obj.imaginaryPart + other.imaginaryPart;  
+            result = ComplexNumber(newReal, newImaginary);  
+        end  
+
+        % Display as a + bi  
+        function display(obj)  
+            fprintf('%.2f + %.2fi\n', obj.realPart, obj.imaginaryPart);  
+        end  
+    end  
+end  
